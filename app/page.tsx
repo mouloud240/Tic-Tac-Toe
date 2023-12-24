@@ -65,7 +65,7 @@ const Home=()=>{
         </div>
     </div>
     {(!winner&&!draw)&& <h1 className="mt-2 text-bold text-lg">
-      It is {turn} Turn's </h1>}
+      It is {turn} Turn </h1>}
     <h1 className={`mt-2 text-bold text-lg ${winner[0]}`}>{winner}</h1>
     </div>
     </>
