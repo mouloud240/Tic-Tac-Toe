@@ -1,5 +1,4 @@
 import React, { Dispatch, SetStateAction } from 'react';
-import style from "./cell.module.css"
 
 type Cellprops = {
     item: string;

@@ -2,6 +2,12 @@
 import Cell from "@/Components/Cell";
 import { useEffect, useState } from "react";
 const Home=()=>{
+  const pickside=(First:string)=>{
+ First= prompt("Enter the side who plays first") || "";
+    
+  }
+  let first=""
+
   const [cell,setcell]=useState(["","","","","","","","",""])
   const[turn,setTurn]=useState("X")
   const winpositions=[
@@ -38,7 +44,7 @@ const Home=()=>{
   },[turn])
   return (
     <>
-    <div className="flex flex-col justify-center h-[100vh] items-center">
+    <div className="flex flex-col justify-center h-[100vh] items-center bg-gradient-to-l from-blue-500 via-indigo-700 to-red-500">
      <div className="flex w-[300px] h-[300px] border-2 border-black">
       <div className=" grid grid-cols-3">
         {cell.map((item,index)=>{

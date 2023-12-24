@@ -9,3 +9,7 @@
     @apply text-blue-500;
   }
 }
+.root{
+  background: linear-gradient(to right, #3498db, #2c3e50, #e74c3c);
+
+}
