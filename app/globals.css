@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer utilities {
+  .X {
+    @apply text-red-500;
+  }
+  .O {
+    @apply text-blue-500;
+  }
+}
