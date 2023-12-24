@@ -6,7 +6,6 @@ const Home=()=>{
  First= prompt("Enter the side who plays first") || "";
     
   }
-  let first=""
 
   const [cell,setcell]=useState(["","","","","","","","",""])
   const[turn,setTurn]=useState("X")
@@ -21,30 +20,32 @@ const Home=()=>{
     [2,5,8]
   ]
   const [winner,setwinner]=useState("")
-
+ 
   useEffect(()=>{
     {winpositions.forEach((combo)=>{
-      const circlewin=combo.every((pos)=>cell[pos]==="O" )
-      const xwin=combo.every((pos)=>cell[pos]==="X" )
+      let circlewin=combo.every((pos)=>cell[pos]==="O" )
+      let xwin=combo.every((pos)=>cell[pos]==="X" )
       if (circlewin)
       {
         setwinner("O wins")
     }
       else if (xwin){
-        setwinner("X wins")
-    } 
+        setwinner("X wins")}
+        if(!winner){
+          let draw=(cell.every((c)=>c!=="")&&!winner)
+        
+  
+          if (draw){
+            setwinner("It's a Draw")
+          }
+  
+        }
     })}
-  },[turn])
-  let draw=false
-  useEffect(()=>{
-     draw=(cell.every((c)=>c!=="")&&!winner)
-    if(draw){
-      setwinner("It is a draw")
-    }
-  },[turn])
+  },[turn,winner])
+
   return (
     <>
-    <div className="flex flex-col justify-center h-[100vh] items-center bg-gradient-to-l from-blue-500 via-indigo-700 to-red-500">
+    <div className="flex flex-col justify-center h-[100vh] items-center bg-gradient-to-l from-blue-500 via-indigo-700 to-red-500 w-[100vw]">
      <div className="flex w-[300px] h-[300px] border-2 border-black">
       <div className=" grid grid-cols-3">
         {cell.map((item,index)=>{
@@ -64,7 +65,7 @@ const Home=()=>{
         )}
         </div>
     </div>
-    {(!winner&&!draw)&& <h1 className="mt-2 text-bold text-lg">
+    {(!winner)&& <h1 className="mt-2 text-bold text-lg">
       It is {turn} Turn </h1>}
     <h1 className={`mt-2 text-bold text-lg ${winner[0]}`}>{winner}</h1>
     </div>
