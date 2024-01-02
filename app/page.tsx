@@ -33,12 +33,9 @@ const Home=()=>{
         setwinner("X wins")}
         if(!winner){
           let draw=(cell.every((c)=>c!=="")&&!winner)
-        
-  
           if (draw){
             setwinner("It's a Draw")
           }
-  
         }
     })}
   },[turn,winner])
@@ -69,6 +66,7 @@ const Home=()=>{
       It is {turn} Turn </h1>}
     <h1 className={`mt-2 text-bold text-lg ${winner[0]}`}>{winner}</h1>
     </div>
+
     </>
   )
 }
