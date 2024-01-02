@@ -42,7 +42,7 @@ const Home=()=>{
 
   return (
     <>
-    <div className="flex flex-col justify-center h-[100vh] items-center bg-gradient-to-l from-blue-500 via-indigo-700 to-red-500 w-[100vw]">
+    <div className="flex flex-col justify-center h-[100vh] w-full items-center bg-gradient-to-l from-blue-500 via-indigo-700 to-red-500">
      <div className="flex w-[300px] h-[300px] border-2 border-black">
       <div className=" grid grid-cols-3">
         {cell.map((item,index)=>{
